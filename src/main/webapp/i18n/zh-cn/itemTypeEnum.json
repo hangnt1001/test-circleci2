@@ -1,0 +1,10 @@
+{
+    "beecowGatewayApp": {
+        "ItemTypeEnum" : {
+            "null": "",
+            "NORMAL_PRODUCT": "NORMAL_PRODUCT",
+            "BUSINESS_PRODUCT": "BUSINESS_PRODUCT",
+            "DEAL": "DEAL"
+        }
+    }
+}

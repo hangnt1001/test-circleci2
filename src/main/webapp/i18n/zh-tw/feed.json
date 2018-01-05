@@ -1,0 +1,29 @@
+{
+    "beecowGatewayApp": {
+        "feed" : {
+            "home": {
+                "title": "Feeds",
+                "createLabel": "Create a new Feed",
+                "createOrEditLabel": "Create or edit a Feed",
+                "search": "Search for Feed"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Feed {{ id }}?"
+            },
+            "detail": {
+                "title": "Feed"
+            },
+            "title": "Title",
+            "content": "Content",
+            "modifieldDate": "Modifield Date",
+            "createdDate": "Created Date"
+        }
+    },
+    "feedServicesApp": {
+        "feed" : {
+            "created": "A new Feed is created with identifier {{ param }}",
+            "updated": "A Feed is updated with identifier {{ param }}",
+            "deleted": "A Feed is deleted with identifier {{ param }}"
+        }
+    }
+}

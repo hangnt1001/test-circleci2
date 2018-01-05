@@ -1,0 +1,28 @@
+{
+    "beecowGatewayApp": {
+        "bcUserSetting" : {
+            "home": {
+                "title": "Bc User Settings",
+                "createLabel": "Create a new Bc User Setting",
+                "createOrEditLabel": "Create or edit a Bc User Setting",
+                "search": "Search for Bc User Setting"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Bc User Setting {{ id }}?"
+            },
+            "detail": {
+                "title": "Bc User Setting"
+            },
+            "settingKey": "Setting Key",
+            "settingType": "Setting Type",
+            "bcUserSettingValue": "Bc User Setting Value"
+        }
+    },
+    "userservicesApp": {
+        "bcUserSetting" : {
+            "created": "A new Bc User Setting is created with identifier {{ param }}",
+            "updated": "A Bc User Setting is updated with identifier {{ param }}",
+            "deleted": "A Bc User Setting is deleted with identifier {{ param }}"
+        }
+    }
+}

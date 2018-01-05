@@ -1,0 +1,29 @@
+{
+    "beecowGatewayApp": {
+        "itemImage" : {
+            "home": {
+                "title": "Item Images",
+                "createLabel": "Create a new Item Image",
+                "createOrEditLabel": "Create or edit a Item Image",
+                "search": "Search for Item Image"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Item Image {{ id }}?"
+            },
+            "detail": {
+                "title": "Item Image"
+            },
+            "path": "Path",
+            "rank": "Rank",
+            "mediaFileId": "Media File Id",
+            "item": "Item"
+        }
+    },
+    "itemServiceApp": {
+        "itemImage" : {
+            "created": "A new Item Image is created with identifier {{ param }}",
+            "updated": "A Item Image is updated with identifier {{ param }}",
+            "deleted": "A Item Image is deleted with identifier {{ param }}"
+        }
+    }
+}

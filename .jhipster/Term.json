@@ -1,0 +1,61 @@
+{
+  "fluentMethods": true,
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "relationshipName": "child",
+      "otherEntityName": "term",
+      "otherEntityRelationshipName": "parent"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "relationshipValidateRules": "required",
+      "relationshipName": "entity",
+      "otherEntityName": "termEntity",
+      "otherEntityRelationshipName": "term"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "relationshipValidateRules": "required",
+      "relationshipName": "metadata",
+      "otherEntityName": "termMetadata",
+      "otherEntityRelationshipName": "term"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "relationshipName": "parent",
+      "otherEntityName": "term",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "relationshipName": "taxonomy",
+      "otherEntityName": "taxonomy",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldName": "name",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "displayName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "termLevel",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "termOrder",
+      "fieldType": "Integer"
+    }
+  ],
+  "changelogDate": "20170302064944",
+  "dto": "mapstruct",
+  "pagination": "no",
+  "service": "serviceClass",
+  "microserviceName": "catalogservices",
+  "entityTableName": "term"
+}

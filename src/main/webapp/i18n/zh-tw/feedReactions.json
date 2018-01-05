@@ -1,0 +1,30 @@
+{
+    "beecowGatewayApp": {
+        "feedReactions" : {
+            "home": {
+                "title": "Feed Reactions",
+                "createLabel": "Create a new Feed Reactions",
+                "createOrEditLabel": "Create or edit a Feed Reactions",
+                "search": "Search for Feed Reactions"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Feed Reactions {{ id }}?"
+            },
+            "detail": {
+                "title": "Feed Reactions"
+            },
+            "contentId": "Content Id",
+            "contentType": "Content Type",
+            "statistic": "Statistic",
+            "userReaction": "User Reaction",
+            "userComment": "User Comment"
+        }
+    },
+    "reactionservicesApp": {
+        "feedReactions" : {
+            "created": "A new Feed Reactions is created with identifier {{ param }}",
+            "updated": "A Feed Reactions is updated with identifier {{ param }}",
+            "deleted": "A Feed Reactions is deleted with identifier {{ param }}"
+        }
+    }
+}

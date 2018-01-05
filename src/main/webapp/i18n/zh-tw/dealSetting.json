@@ -1,0 +1,34 @@
+{
+    "beecowGatewayApp": {
+        "dealSetting" : {
+            "home": {
+                "title": "Deal Settings",
+                "createLabel": "Create a new Deal Setting",
+                "createOrEditLabel": "Create or edit a Deal Setting",
+                "search": "Search for Deal Setting"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Deal Setting {{ id }}?"
+            },
+            "detail": {
+                "title": "Deal Setting"
+            },
+            "title": "Title",
+            "hourLeft": "Hour Left",
+            "voucherLeft": "Voucher Left",
+            "sizeWeb": "Size Web",
+            "createdDate": "Created Date",
+            "lastModifiedDate": "Last Modified Date",
+            "numberOfDeal": "Number Of Deal",
+            "type": "Type",
+            "dealMetadata": "Deal Metadata"
+        }
+    },
+    "mainCompositeServiceApp": {
+        "dealSetting" : {
+            "created": "A new Deal Setting is created with identifier {{ param }}",
+            "updated": "A Deal Setting is updated with identifier {{ param }}",
+            "deleted": "A Deal Setting is deleted with identifier {{ param }}"
+        }
+    }
+}

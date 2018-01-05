@@ -1,0 +1,45 @@
+{
+  "fluentMethods": true,
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "relationshipValidateRules": "required",
+      "relationshipName": "statistic",
+      "otherEntityName": "feedReactionStatistic",
+      "otherEntityField": "id",
+      "ownerSide": true,
+      "otherEntityRelationshipName": "feedReactions"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "relationshipValidateRules": "required",
+      "relationshipName": "userReaction",
+      "otherEntityName": "userReaction",
+      "otherEntityRelationshipName": "feedReactions"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "relationshipValidateRules": "required",
+      "relationshipName": "userComment",
+      "otherEntityName": "userComment",
+      "otherEntityRelationshipName": "feedReactions"
+    }
+  ],
+  "fields": [
+    {
+      "fieldName": "contentId",
+      "fieldType": "Long"
+    },
+    {
+      "fieldName": "contentType",
+      "fieldType": "ContentType",
+      "fieldValues": "STATUS,SELLING,BUYING,HIRING,PROFILE_SHARING,BUZZED,JOB,PRODUCT,COMMENT"
+    }
+  ],
+  "changelogDate": "20170302121207",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "microserviceName": "reactionservices",
+  "entityTableName": "feed_reactions"
+}

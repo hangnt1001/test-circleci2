@@ -1,0 +1,41 @@
+{
+  "fluentMethods": true,
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "relationshipName": "userComment",
+      "otherEntityName": "userComment",
+      "otherEntityRelationshipName": "replyToComment"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "relationshipName": "feedReactions",
+      "otherEntityName": "feedReactions",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "relationshipName": "writtenBy",
+      "otherEntityName": "bcUserBasic",
+      "otherEntityField": "id"
+    },
+    {
+      "relationshipType": "many-to-one",
+      "relationshipName": "replyToComment",
+      "otherEntityName": "userComment",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldName": "content",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20170302121208",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "microserviceName": "reactionservices",
+  "entityTableName": "user_comment"
+}

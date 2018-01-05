@@ -1,0 +1,33 @@
+{
+    "beecowGatewayApp": {
+        "mediaFile" : {
+            "home": {
+                "title": "Media Files",
+                "createLabel": "Create a new Media File",
+                "createOrEditLabel": "Create or edit a Media File",
+                "search": "Search for Media File"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Media File {{ id }}?"
+            },
+            "detail": {
+                "title": "Media File"
+            },
+            "name": "Name",
+            "title": "Title",
+            "content": "Content",
+            "path": "Path",
+            "delay": "Delay",
+            "status": "Status",
+            "width": "Width",
+            "height": "Height"
+        }
+    },
+    "mediaServicesApp": {
+        "mediaFile" : {
+            "created": "A new Media File is created with identifier {{ param }}",
+            "updated": "A Media File is updated with identifier {{ param }}",
+            "deleted": "A Media File is deleted with identifier {{ param }}"
+        }
+    }
+}

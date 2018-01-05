@@ -1,0 +1,28 @@
+{
+    "beecowGatewayApp": {
+        "dealMetadata" : {
+            "home": {
+                "title": "Deal Metadata",
+                "createLabel": "Create a new Deal Metadata",
+                "createOrEditLabel": "Create or edit a Deal Metadata",
+                "search": "Search for Deal Metadata"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Deal Metadata {{ id }}?"
+            },
+            "detail": {
+                "title": "Deal Metadata"
+            },
+            "metaKey": "Meta Key",
+            "metaValue": "Meta Value",
+            "dealSetting": "Deal Setting"
+        }
+    },
+    "mainCompositeServiceApp": {
+        "dealMetadata" : {
+            "created": "A new Deal Metadata is created with identifier {{ param }}",
+            "updated": "A Deal Metadata is updated with identifier {{ param }}",
+            "deleted": "A Deal Metadata is deleted with identifier {{ param }}"
+        }
+    }
+}

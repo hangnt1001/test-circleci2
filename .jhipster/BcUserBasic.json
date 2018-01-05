@@ -1,0 +1,40 @@
+{
+  "fluentMethods": true,
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "relationshipName": "userReaction",
+      "otherEntityName": "userReaction",
+      "otherEntityRelationshipName": "reactedBy"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "relationshipName": "userComment",
+      "otherEntityName": "userComment",
+      "otherEntityRelationshipName": "writtenBy"
+    },
+    {
+      "relationshipType": "one-to-many",
+      "relationshipValidateRules": "required",
+      "relationshipName": "bookmarks",
+      "otherEntityName": "bookmark",
+      "otherEntityRelationshipName": "bcUser"
+    }
+  ],
+  "fields": [
+    {
+      "fieldName": "displayName",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "avatar",
+      "fieldType": "String"
+    }
+  ],
+  "changelogDate": "20170302121211",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "microserviceName": "reactionservices",
+  "entityTableName": "bc_user_basic"
+}

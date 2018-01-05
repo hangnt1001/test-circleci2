@@ -1,0 +1,45 @@
+{
+    "fluentMethods": true,
+    "relationships": [],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "title",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "content",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "path",
+            "fieldType": "String"
+        },
+        {
+            "fieldName": "delay",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "status",
+            "fieldType": "Boolean"
+        },
+        {
+            "fieldName": "width",
+            "fieldType": "Integer"
+        },
+        {
+            "fieldName": "height",
+            "fieldType": "Integer"
+        }
+    ],
+    "changelogDate": "20170106100511",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "media_file",
+    "pagination": "infinite-scroll",
+    "microserviceName": "mediaServices",
+    "searchEngine": false
+}

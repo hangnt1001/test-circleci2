@@ -1,0 +1,28 @@
+{
+    "beecowGatewayApp": {
+        "storeImage" : {
+            "home": {
+                "title": "Store Images",
+                "createLabel": "Create a new Store Image",
+                "createOrEditLabel": "Create or edit a Store Image",
+                "search": "Search for Store Image"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete Store Image {{ id }}?"
+            },
+            "detail": {
+                "title": "Store Image"
+            },
+            "name": "Name",
+            "path": "Path",
+            "mediaFileId": "Media File Id"
+        }
+    },
+    "storeServiceApp": {
+        "storeImage" : {
+            "created": "A new Store Image is created with identifier {{ param }}",
+            "updated": "A Store Image is updated with identifier {{ param }}",
+            "deleted": "A Store Image is deleted with identifier {{ param }}"
+        }
+    }
+}

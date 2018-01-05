@@ -1,0 +1,27 @@
+{
+  "fluentMethods": true,
+  "relationships": [
+    {
+      "relationshipType": "many-to-one",
+      "relationshipName": "setting",
+      "otherEntityName": "bcUserSetting",
+      "otherEntityField": "id"
+    }
+  ],
+  "fields": [
+    {
+      "fieldName": "settingValue",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "bcUserId",
+      "fieldType": "Long"
+    }
+  ],
+  "changelogDate": "20170428060632",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "microserviceName": "userservices",
+  "entityTableName": "bc_user_setting_value"
+}

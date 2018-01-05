@@ -1,0 +1,3 @@
+"id","login","password_hash","account_type","first_name","last_name","display_name","email","activated","location_code","lang_key","created_by","created_date","last_modified_by","last_modified_date"
+16,"qa.support@mediastep.com","$2a$10$L2QwGAYeg4gvotN5V4Vdo.F4SLvmFsHqRdUs2bOdBX.uZQ53NxtYi","EMAIL","Editor","System","System Editor","qa.support@mediastep.com","true","VN","en","system","2017-08-30T04:46:06.349Z","system","2017-08-30T04:46:06.349Z"
+17,"cs.support@mediastep.com","$2a$10$L2QwGAYeg4gvotN5V4Vdo.F4SLvmFsHqRdUs2bOdBX.uZQ53NxtYi","EMAIL","Editor","System","System Editor","cs.support@mediastep.com","true","VN","en","system","2017-08-30T04:46:06.349Z","system","2017-08-30T04:46:06.349Z"

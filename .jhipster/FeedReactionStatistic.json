@@ -1,0 +1,28 @@
+{
+  "fluentMethods": true,
+  "relationships": [
+    {
+      "relationshipType": "one-to-one",
+      "relationshipName": "feedReactions",
+      "otherEntityName": "feedReactions",
+      "ownerSide": false,
+      "otherEntityRelationshipName": "statistic"
+    }
+  ],
+  "fields": [
+    {
+      "fieldName": "likeCount",
+      "fieldType": "Integer"
+    },
+    {
+      "fieldName": "commentCount",
+      "fieldType": "Integer"
+    }
+  ],
+  "changelogDate": "20170302121210",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "microserviceName": "reactionservices",
+  "entityTableName": "feed_reaction_statistic"
+}

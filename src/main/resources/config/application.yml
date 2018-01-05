@@ -1,0 +1,188 @@
+# ===================================================================
+# Spring Boot configuration.
+#
+# This configuration will be overriden by the Spring profile you use,
+# for example application-dev.yml if you use the "dev" profile.
+# ===================================================================
+
+# ===================================================================
+# Standard Spring Boot properties.
+# Full reference is available at:
+# http://docs.spring.io/spring-boot/docs/current/reference/html/common-application-properties.html
+# ===================================================================
+
+beecow:
+    debugMode: true
+    defaultLanguage: en
+    languages: en,vi
+    gateway:
+        userService:
+            user:
+                defaultLocation: US
+                defaultLanguage: en
+                defaultAvatarUrl:
+                    default: http://beecow-general.s3-website-ap-southeast-1.amazonaws.com/1000.jpg
+                    male: http://beecow-general.s3-website-ap-southeast-1.amazonaws.com/1001.jpg
+                    female: http://beecow-general.s3-website-ap-southeast-1.amazonaws.com/1002.jpg
+                activationKeyValidTime: 15
+                activationKeyValidTimeUnit: MINUTES
+                resetKeyValidTime: 24
+                resetKeyValidTimeUnit: HOURS
+            guest:
+                createRetry: 5
+            beecowUser:
+                specialBeecowUser:
+                    langKeys: my-zawgyi # list of special beecowuser languages, separated by ','
+        emailService:
+            senderEmail: welcome@beecow.com
+            contactUsEmail: cskh@beecow.com
+
+eureka:
+    instance:
+        appname: beecowGateway
+        instanceId: beecowGateway:${spring.application.instance_id:${random.value}}
+        statusPageUrlPath: ${management.context-path}/info
+        healthCheckUrlPath: ${management.context-path}/health
+ribbon:
+    eureka:
+        enabled: true
+    ReadTimeout: 120000
+    ConnectTimeout: 1200000
+
+zuul:
+    host:
+        connect-timeout-millis: 60000
+        socket-timeout-millis: 60000
+
+# See https://github.com/Netflix/Hystrix/wiki/Configuration
+hystrix:
+    command:
+        default:
+            execution:
+                isolation:
+                    thread:
+                        timeoutInMilliseconds: 60000
+
+feign:
+    hystrix:
+        enabled: true
+
+management:
+    context-path: /management
+    health:
+        mail:
+            enabled: true # When using the MailService, configure an SMTP server and set this to true
+spring:
+    application:
+        name: beecowGateway
+    jackson:
+        serialization.write_dates_as_timestamps: false
+    cloud:
+        stream:
+            kafka:
+                binder:
+                    brokers: localhost
+            bindings:
+                userChannel:
+                    destination: userchannel
+                    contentType: application/json
+                userLoginChannel:
+                    destination: userLoginChannel
+                    contentType: application/json
+                smsChannel:
+                    destination: smsChannel
+                    contentType: application/json
+                pushBeecowCommandNotifyChannel:
+                    destination: pushBeecowCommandNotifyChannel
+                    contentType: application/json
+    jpa:
+        open-in-view: false
+        hibernate:
+            ddl-auto: none
+            naming:
+                physical-strategy: org.springframework.boot.orm.jpa.hibernate.SpringPhysicalNamingStrategy
+                implicit-strategy: org.springframework.boot.orm.jpa.hibernate.SpringImplicitNamingStrategy
+    messages:
+        basename: i18n/messages
+    mvc:
+        favicon:
+            enabled: false
+    thymeleaf:
+        mode: XHTML
+    mail:
+        host: smtp.beecow.com
+        port: 465
+        username: AKIAJJUID22O7FCVZE4A
+        password: AikZPWkzumGEORcG/LTbx7a2q9WMmfn9Nc9EWaKToaQO
+        protocol: smtp
+        tls: true
+        properties:
+         mail:
+          smtp:
+           auth: true
+           ssl.enable: true
+           starttls.enable: true
+           debug: true
+    social:
+        # see https://developers.google.com/+/web/signin/server-side-flow#step_1_create_a_client_id_and_client_secret
+        google:
+            clientId: 438175633738-b49npj6ohi9hliutqkl65vo73pfs3clm.apps.googleusercontent.com
+            clientSecret: GssQBFeFkMl_GXnUDsqMJhRp
+
+        # see https://developers.facebook.com/docs/facebook-login/v2.2
+        facebook:
+            clientId: 1893566387566234
+            clientSecret: 23649a073994cfc78e436ced0b007008
+
+        # see https://apps.twitter.com/app/
+        #twitter:
+            #clientId: xxx
+            #clientSecret: xxx
+
+        # jhipster-needle-add-social-configuration
+
+security:
+    basic:
+        enabled: false
+
+server:
+    session:
+        cookie:
+            http-only: true
+
+logging:
+    file: target/${spring.application.name}.log
+
+# ===================================================================
+# JHipster specific properties
+# ===================================================================
+
+jhipster:
+    async:
+        corePoolSize: 2
+        maxPoolSize: 50
+        queueCapacity: 10000
+    cors: #By default CORS are not enabled. Uncomment to enable.
+        allowed-origins: "*"
+        allowed-methods: GET, PUT, POST, DELETE, OPTIONS
+        allowed-headers: "*"
+        exposed-headers: X-Total-Count, Link
+        allow-credentials: true
+        max-age: 1800
+    mail:
+        from: welcome@beecow.com
+    swagger:
+        title: beecowGateway API
+        description: beecowGateway API documentation
+        version: 0.0.1
+        termsOfServiceUrl:
+        contactName:
+        contactUrl:
+        contactEmail:
+        license:
+        licenseUrl:
+    social:
+        redirectAfterSignIn: "/#/social-auth"
+    ribbon:
+        # comma separated list of profiles to show a ribbon on the GUI
+        displayOnActiveProfiles: dev

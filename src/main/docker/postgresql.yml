@@ -1,0 +1,12 @@
+version: '2'
+services:
+    beecowgateway-postgresql:
+        container_name: beecowgateway-postgresql
+        image: postgres:9.5.4
+        # volumes:
+        #     - ~/volumes/jhipster/beecowGateway/postgresql/:/var/lib/postgresql/
+        environment:
+            - POSTGRES_USER=beecowGateway
+            - POSTGRES_PASSWORD=
+        ports:
+            - 5432:5432

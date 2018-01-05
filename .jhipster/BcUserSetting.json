@@ -1,0 +1,29 @@
+{
+  "fluentMethods": true,
+  "relationships": [
+    {
+      "relationshipType": "one-to-many",
+      "relationshipValidateRules": "required",
+      "relationshipName": "bcUserSettingValue",
+      "otherEntityName": "bcUserSettingValue",
+      "otherEntityRelationshipName": "setting"
+    }
+  ],
+  "fields": [
+    {
+      "fieldName": "settingKey",
+      "fieldType": "String"
+    },
+    {
+      "fieldName": "settingType",
+      "fieldType": "DataType",
+      "fieldValues": "STRING,NUMBER,LIST,STRING_LIST,NUMBER_LIST"
+    }
+  ],
+  "changelogDate": "20170428060633",
+  "dto": "mapstruct",
+  "pagination": "pagination",
+  "service": "serviceClass",
+  "microserviceName": "userservices",
+  "entityTableName": "bc_user_setting"
+}

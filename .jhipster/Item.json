@@ -1,0 +1,116 @@
+{
+    "fluentMethods": true,
+    "relationships": [
+        {
+            "relationshipName": "images",
+            "otherEntityName": "itemImage",
+            "relationshipType": "one-to-many",
+            "otherEntityRelationshipName": "item"
+        }
+    ],
+    "fields": [
+        {
+            "fieldName": "name",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "500"
+        },
+        {
+            "fieldName": "currency",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "required",
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "50"
+        },
+        {
+            "fieldName": "unitPrice",
+            "fieldType": "BigDecimal",
+            "fieldValidateRules": [
+                "min"
+            ],
+            "fieldValidateRulesMin": "0"
+        },
+        {
+            "fieldName": "description",
+            "fieldType": "String",
+            "fieldValidateRules": [
+                "maxlength"
+            ],
+            "fieldValidateRulesMaxlength": "5000"
+        },
+        {
+            "fieldName": "cateId",
+            "fieldType": "Long",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "sellerId",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "totalLike",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "totalComment",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "itemType",
+            "fieldType": "ItemTypeEnum",
+            "fieldValues": "NORMAL_PRODUCT, BUSINESS_PRODUCT, DEAL",
+            "fieldValidateRules": [
+                "required"
+            ]
+        },
+        {
+            "fieldName": "discount",
+            "fieldType": "Float",
+            "fieldValidateRules": [
+                "required",
+                "min",
+                "max"
+            ],
+            "fieldValidateRulesMin": 0,
+            "fieldValidateRulesMax": 100
+        },
+        {
+            "fieldName": "createdDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "updatedDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "totalItem",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "soldItem",
+            "fieldType": "Long"
+        },
+        {
+            "fieldName": "startDate",
+            "fieldType": "ZonedDateTime"
+        },
+        {
+            "fieldName": "expiredDate",
+            "fieldType": "ZonedDateTime"
+        }
+    ],
+    "changelogDate": "20170118060217",
+    "dto": "mapstruct",
+    "service": "serviceImpl",
+    "entityTableName": "item",
+    "pagination": "infinite-scroll",
+    "microserviceName": "itemService",
+    "searchEngine": "elasticsearch"
+}

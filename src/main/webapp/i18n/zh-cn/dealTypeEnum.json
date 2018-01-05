@@ -1,0 +1,10 @@
+{
+    "beecowGatewayApp": {
+        "DealTypeEnum" : {
+            "null": "",
+            "LastMinute": "LastMinute",
+            "LastVoucher": "LastVoucher",
+            "DealCategory": "DealCategory"
+        }
+    }
+}

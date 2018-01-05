@@ -1,0 +1,30 @@
+{
+    "beecowGatewayApp": {
+        "userComment" : {
+            "home": {
+                "title": "User Comments",
+                "createLabel": "Create a new User Comment",
+                "createOrEditLabel": "Create or edit a User Comment",
+                "search": "Search for User Comment"
+            },
+            "delete": {
+                "question": "Are you sure you want to delete User Comment {{ id }}?"
+            },
+            "detail": {
+                "title": "User Comment"
+            },
+            "content": "Content",
+            "userComment": "User Comment",
+            "feedReactions": "Feed Reactions",
+            "writtenBy": "Written By",
+            "replyToComment": "Reply To Comment"
+        }
+    },
+    "reactionservicesApp": {
+        "userComment" : {
+            "created": "A new User Comment is created with identifier {{ param }}",
+            "updated": "A User Comment is updated with identifier {{ param }}",
+            "deleted": "A User Comment is deleted with identifier {{ param }}"
+        }
+    }
+}

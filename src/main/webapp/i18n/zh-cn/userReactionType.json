@@ -1,0 +1,8 @@
+{
+    "beecowGatewayApp": {
+        "UserReactionType" : {
+            "null": "",
+            "LIKE": "LIKE"
+        }
+    }
+}
