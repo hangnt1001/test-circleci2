@@ -1,9 +1,0 @@
-{
-    "beecowGatewayApp": {
-        "DetailTypeEnum" : {
-            "null": "",
-            "FINE_PRINT": "FINE_PRINT",
-            "APPLICABLE_VENUE": "APPLICABLE_VENUE"
-        }
-    }
-}

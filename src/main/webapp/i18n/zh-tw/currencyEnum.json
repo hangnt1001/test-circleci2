@@ -1,9 +1,0 @@
-{
-    "beecowGatewayApp": {
-        "CurrencyEnum" : {
-            "null": "",
-            "VND": "VND",
-            "KS": "KS"
-        }
-    }
-}
