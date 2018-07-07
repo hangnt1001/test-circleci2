@@ -1,0 +1,124 @@
+version: 2
+jobs:
+  run_unit_tests:
+    working_directory: ~/test-circle2
+    docker:
+      # TODO: Move to a public repo owned by Flex
+      - image: circleci/openjdk:8-jdk-browsers
+    steps:
+      - checkout
+      - run:
+          name: Run unit tests
+#          command: cd RestService && mvn test
+          command: echo Skipping unit tests for now
+      - run:
+          name: Echo Sha1
+          command: echo ${CIRCLE_SHA1}
+      #- store_test_results:
+      #    path: RestService/target/surefire-reports
+      #- store_artifacts:
+      #    path: RestService/target/surefire-reports
+
+  pr_build:
+    working_directory: ~/test-circle2
+    docker:
+      # TODO: Move to a public repo owned by Flex
+      - image: circleci/openjdk:8-jdk-browsers
+    steps:
+      - checkout
+      - setup_remote_docker
+      # TODO: Remove skipping unit tests as soon as the project has tests to run
+      # TODO: Remove debug flag
+      #- run: cd RestService && mvn clean package docker:build -Dmaven.test.skip=true
+      - run:
+          name: Echo Sha1
+          command: echo ${CIRCLE_SHA1}
+
+  master_build:
+    working_directory: ~/test-circle2
+    docker:
+      # TODO: Move to a public repo owned by Flex
+      - image: circleci/openjdk:8-jdk-browsers
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run: 
+          name: echo SHA1
+          command: echo ${CIRCLE_SHA1}
+
+  deploy_to_dev:
+    working_directory: ~/test-circle2
+    docker:
+      - image: circleci/openjdk:8-jdk-browsers
+        environment:
+          ENVIRONMENT: dev
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run: echo ${CIRCLE_SHA1}
+
+  deploy_to_qa:
+    working_directory: ~/test-circle2
+    docker:
+      - image: circleci/openjdk:8-jdk-browsers
+        environment:
+          ENVIRONMENT: qa
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run: echo ${CIRCLE_SHA1}
+          
+  deploy_to_uat:
+    working_directory: ~/test-circle2
+    docker:
+      - image: circleci/openjdk:8-jdk-browsers
+        environment:
+          ENVIRONMENT: stage
+    steps:
+      - checkout
+      - setup_remote_docker
+      - run: echo ${CIRCLE_SHA1}
+
+workflows:
+  version: 2
+  build_and_deploy:
+    jobs:
+      - run_unit_tests
+      - pr_build:
+          filters:
+            branches:
+              only:
+                - feature/*
+                - bug/*
+                - hotfix/*
+          requires:
+            - run_unit_tests
+      - master_build:
+          filters:
+            branches:
+              only:
+                - master
+          requires:
+            - run_unit_tests
+      - deploy_to_dev:
+          filters:
+            branches:
+              only:
+                - master
+          requires:
+            - master_build
+      - qa_approval:
+          type: approval
+          requires:
+            - master_build
+            - deploy_to_dev
+      - deploy_to_qa:
+          requires:
+            - qa_approval
+      - uat_approval:
+          type: approval
+          requires:
+            - deploy_to_qa
+      - deploy_to_uat:
+          requires:
+            - uat_approval
