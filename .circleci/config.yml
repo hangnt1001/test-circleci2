@@ -19,7 +19,7 @@ jobs:
       #- store_artifacts:
       #    path: RestService/target/surefire-reports
 
-  pr_build:
+  pre_build:
     working_directory: ~/test-circle2
     docker:
       # TODO: Move to a public repo owned by Flex
@@ -84,11 +84,11 @@ workflows:
   build_and_deploy:
     jobs:
       - run_unit_tests
-      - pr_build:
+      - pre_build:
           filters:
             branches:
               only:
-                - feature*
+                - feature/*
                 - bug/*
                 - hotfix/*
           requires:
