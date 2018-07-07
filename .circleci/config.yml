@@ -91,6 +91,7 @@ workflows:
                 - feature/*
                 - bug/*
                 - hotfix/*
+                - feature/test
           requires:
             - run_unit_tests
       - master_build:
